@@ -1,0 +1,18 @@
+{% extends "templates/base.html" %} {% block title %} {{ _("Irfan Cab Vehicles") }} {% endblock %}
+{% block content %}
+<div class="container">
+	<h2>{{ _("Irfan Cab Vehicles") }}</h2>
+	<div class="mt-20">
+		{% for vehicle in vehicles %}
+		<div class="mb-8">
+			<h5>{{ vehicle.make }}</h5>
+			<div>
+				{{ _("Model") }}: {{ vehicle.model }} {{ _("purchased in year") }}
+				<b> {{ vehicle.year }} </b>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+	<a class="btn btn-primary btn-md" href="ride-order/new"> {{ _("Book a Ride")}} </a>
+</div>
+{% endblock %}
